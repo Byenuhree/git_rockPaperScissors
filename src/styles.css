@@ -1,0 +1,287 @@
+@font-face {
+  font-family: "pokemon hallow";
+  src: url(PokemonHollowNormal-pyPZ.ttf);
+}
+@font-face {
+  font-family: "pokemon monk";
+  src: url(PocketMonk-15ze.ttf);
+}
+:root {
+  --background: linear-gradient(#424f7c, rgb(31, 29, 29));
+  --pokeball-bg: linear-gradient(to bottom, red, black, white);
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+}
+
+h1 {
+  position: fixed;
+  text-align: center;
+  padding: 2.5rem 0;
+  font-family: "pokemon monk";
+  font-size: 50px;
+  font-weight: 1000;
+  color: rgb(26, 89, 156);
+  background-color: rgb(248, 204, 71);
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.hero {
+  margin-top: 8.5rem;
+  background-image: url(img/pmonbg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 81vh;
+}
+
+h2 {
+  font-family: "pokemon monk";
+  color: azure;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 100;
+  position: absolute;
+  top: 15rem;
+  width: 100%;
+}
+.start-div {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 350px;
+  width: 100%;
+}
+.start {
+  background-color: rgba(26, 89, 156, 0.9);
+  color: white;
+  width: 20rem;
+  height: 10rem;
+  border-radius: 25px;
+  border: none;
+  font-size: 5rem;
+  font-family: "pokemon monk";
+}
+
+.start:hover {
+  background-color: rgba(26, 89, 156, 1);
+  transition: ease-in-out 0.9s;
+}
+
+/* <!-- Game --> */
+
+#playGame {
+  height: 81vh;
+  background: var(--background);
+  padding-top: 70px;
+}
+
+h3 {
+  font-family: "pokemon monk";
+  text-align: center;
+  color: rgb(248, 204, 71);
+  font-size: 30px;
+}
+
+.game-section p {
+  font-family: "pokemon hallow";
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
+
+.game-board {
+  /* border: 1px solid salmon; */
+  display: flex;
+  justify-content: space-around;
+  width: 35rem;
+  margin: 10px auto;
+}
+
+h4 {
+  color: rgb(248, 204, 71);
+  font-family: "pokemon monk";
+  text-align: center;
+  font-size: 25px;
+}
+
+.operand {
+  display: grid;
+}
+
+.operand p {
+  font-family: "pokemon monk";
+  color: white;
+}
+
+.vs {
+  color: red;
+  font-family: "pokemon hallow";
+  font-size: 50px;
+  /* border: 1px solid rebeccapurple; */
+}
+
+.mon-starter {
+  width: 100px;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  height: 100px;
+  margin: 10px auto;
+  /* border: 1px solid rebeccapurple; */
+}
+.pokeball-button {
+  background: var(--pokeball-bg);
+  border: none;
+  border-top: 4px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.pokeball-button:hover {
+  transform: scale(1.1, 1.1);
+  transition: ease-in-out 500ms;
+}
+
+.pokemon {
+  width: 50px;
+}
+
+footer {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #424f7c;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* MODALS */
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 210px;
+  padding: 30px;
+  border-radius: 50%;
+  background: var(--pokeball-bg);
+  text-align: center;
+  font-family: "pokemon monk";
+  font-size: 30px;
+  color: rgb(248, 204, 71);
+  user-select: none;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.btn-restart {
+  font-family: "pokemon monk";
+  font-size: 30px;
+  color: black;
+  padding: 5px 5px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  outline: 5px solid black;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 550px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .score-info {
+    font-size: 26px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .btn-square {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sign {
+    font-size: 50px;
+  }
+
+  .modal {
+    width: 95%;
+  }
+}
+
+/* arrow */
+.arrow-up {
+  background-color: transparent;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: rgb(117, 175, 29);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: rgb(117, 175, 29);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.arrow-up.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
