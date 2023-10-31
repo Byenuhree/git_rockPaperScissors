@@ -3,11 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Type Advance</title>
   </head>
   <body>
-    <h1 style="text-align: center">🪨 📰 ✂️</h1>
-    <button onclick="game()">click</button>
-    <script src="app.js"></script>
+    <!-- header -->
+
+    <header href="#top">
+      <h1>let's play pokemon type advantage</h1>
+    </header>
+
+    <!-- hero section -->
+
+    <section class="hero">
+      <h2>Play 5 Rounds</h2>
+      <div class="start-div">
+        <a href="#playGame">
+          <button class="start">PLAY</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Game -->
+    <section id="playGame" class="game-section">
+      <h3 id="scoreInfo">Choose your starter</h3>
+      <p id="scoreMessage">First to score 5 points wins</p>
+
+      <div class="game-board">
+        <!-- <div class="rules">Rules</div> -->
+        <div class="operand left">
+          <h4>Player</h4>
+          <p id="playerScore">0</p>
+          <div id="playerSign">
+            <img
+              class="mon-starter"
+              id="playerImage"
+              src="src/img/Pokeball-0.webp"
+            />
+          </div>
+        </div>
+        <div class="vs">VS</div>
+        <div class="operand right">
+          <h4>Computer</h4>
+          <p id="computerScore">0</p>
+          <div id="computerSign">
+            <img
+              class="mon-starter"
+              id="computerImage"
+              src="src/img/Pokeball-0.webp"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- choose starter -->
+      <div class="btns">
+        <button class="pokeball-button" id="grass">
+          <img src="src/img/bulbasaur.png" alt="bulbasaur" class="pokemon" />
+        </button>
+        <button class="pokeball-button" id="water">
+          <img src="src/img/squirtle.png" alt="squirtle" class="pokemon" />
+        </button>
+        <button class="pokeball-button" id="fire">
+          <img src="src/img/charmander.png" alt="charmander" class="pokemon" />
+        </button>
+      </div>
+    </section>
+
+    <div class="modal" id="endgameModal">
+      <p class="modal-title" id="endgameMsg"></p>
+      <button class="btn btn-restart" id="restartBtn">Play</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <footer>
+      <p>copyright &copy RDG</p>
+      <a href="#top">
+        <button class="arrow-up">
+          <img src="src/img/Pokeball-0.webp" alt="pokeball" />
+        </button>
+      </a>
+    </footer>
+    <script src="/src/app.js"></script>
   </body>
 </html>
